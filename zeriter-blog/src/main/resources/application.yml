@@ -14,8 +14,8 @@ spring:
 eureka:
   client:
     service-url:
-#      defaultZone: http://localhost:8081//eureka/
-      defaultZone: http://39.97.223.51/:8081//eureka/
+      defaultZone: http://localhost:8081//eureka/
+#      defaultZone: http://39.97.223.51/:8081//eureka/
 
 management:
   endpoints:
