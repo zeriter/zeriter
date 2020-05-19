@@ -1,0 +1,44 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: admin-server
+  profiles:
+    active:
+      - secure
+eureka:
+  client:
+    service-url:
+     defaultZone: http://localhost:8081/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+---
+spring:
+  profiles: insecure
+---
+spring:
+  profiles: secure
+  security:
+    user:
+      name: "zeriter"
+      password: "zeriter"
+eureka:
+  instance:
+    metadata-map:
+      user.name: "zeriter"         #These two are needed so that the server
+      user.password: "zeriter"
