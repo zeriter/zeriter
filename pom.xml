@@ -12,6 +12,7 @@
         <module>eureka-server</module>
         <module>admin-server</module>
         <module>zeriter-blog</module>
+        <module>zeriter-base</module>
     </modules>
     <dependencies>
         <dependency>
