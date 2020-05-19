@@ -6,8 +6,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 /**
  * AJAX请求跨域
- * @author Mr.W
- * @time 2018-08-13
+ * @author Zeriter Zhang
+ * @time 2020-05-19
  */
 @Configuration
 public class CorsConfig extends WebMvcConfigurerAdapter {

@@ -11,7 +11,11 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
+/**
+ * AJAX请求跨域
+ * @author Zeriter Zhang
+ * @time 2020-05-19
+ */
 @Configuration  
 @EnableSwagger2
 public class Swagger2Configuration {

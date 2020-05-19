@@ -6,7 +6,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
-
+/**
+ * AJAX请求跨域
+ * @author Zeriter Zhang
+ * @time 2020-05-19
+ */
 @EnableTransactionManagement
 @Configuration
 public class MybatisPlusConfig {
