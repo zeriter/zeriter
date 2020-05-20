@@ -4,9 +4,13 @@ import java.util.Date;
 
 public class Sequence {
     private static Integer num = 0;
-    public static  String getBlogSeq(){
+    public static  String getMenuIdSeq(){
         Date now = new Date();
-        return "blog_"+seqSuffix();
+        return "menu_"+seqSuffix();
+    }
+    public static  String getMenuCodeSeq(){
+        Date now = new Date();
+        return "menu_code_"+seqSuffix();
     }
     public static  String getTagSeq(){
         Date now = new Date();

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * AJAX请求跨域
+ * mybatisplus
  * @author Zeriter Zhang
  * @time 2020-05-19
  */

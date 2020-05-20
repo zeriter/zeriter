@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import java.util.Scanner;
 
 /**
- * AJAX请求跨域
+ * 逆向工程
  * @author Zeriter Zhang
  * @time 2020-05-19
  */
@@ -50,7 +50,7 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/zblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2b8");
+        dsc.setUrl("jdbc:mysql://localhost:3306/base?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2b8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");

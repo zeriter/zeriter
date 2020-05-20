@@ -28,3 +28,10 @@ management:
 logging:
   config=: logback-spring.xml
 
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: com/zeriter/mapper/xml/*.xml
+  type-aliases-package: com.zeriter.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -13,6 +13,7 @@
         <module>admin-server</module>
         <module>zeriter-blog</module>
         <module>zeriter-base</module>
+        <module>zeriter-zuul</module>
     </modules>
     <dependencies>
         <dependency>
