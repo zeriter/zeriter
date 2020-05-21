@@ -1,0 +1,455 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <title>工号管理</title>
+  <!-- loader-->
+  <link href="assets/css/pace.min.css" rel="stylesheet"/>
+  <script src="assets/js/pace.min.js"></script>
+  <!--favicon-->
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <!-- simplebar CSS-->
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+  <!-- Bootstrap core CSS-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- animate CSS-->
+  <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
+  <!-- Icons CSS-->
+  <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
+  <!-- Sidebar CSS-->
+  <link href="assets/css/sidebar-menu.css" rel="stylesheet"/>
+  <!-- Custom Style-->
+  <link href="assets/css/app-style.css" rel="stylesheet"/>
+  <link href="assets/dist/css/bootstrap-select.css" rel="stylesheet"/>   
+  <style type="text/css">
+    .dropdown-menu {
+      background-color: rgba(255,255,255) !important;
+    }
+    .dropdown-item.active, .dropdown-item:active {
+      background-color: #778899;
+    }
+    .bootstrap-select .dropdown-menu li a span.text {
+      color: black;
+    }
+    .dropdown-item {
+        color: #000000;
+    }
+    .dropdown-item:hover {
+        background-color:  #778899;
+    }
+    .btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle){
+      background-color: #778899;
+    }
+    .btn-group>.btn-group:not(:first-child)>.btn, .btn-group>.btn:not(:first-child) {
+        background-color: #778899;
+    }
+    .bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+        color: white;
+    }
+    /*.filter-option-inner-inner font{
+      background-color: rgba(255,255,255) !important;
+    }*/
+  </style>
+</head>
+
+<body class="bg-theme bg-theme1">
+
+  <!-- start loader -->
+  <div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
+  <!-- end loader -->
+
+  <!-- Start wrapper-->
+  <div id="wrapper">
+
+    <!--Start sidebar-wrapper-->
+    <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
+     <div class="brand-logo">
+      <a href="index.html">
+       <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+       <h5 class="logo-text">zeriter base</h5>
+     </a>
+   </div>
+   <ul class="sidebar-menu do-nicescrol">
+    <li class="sidebar-header">工作台</li>
+    <li>
+      <a href="index.html">
+        <i class="zmdi zmdi-view-dashboard"></i> <span>首页</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="profile.html">
+        <i class="zmdi zmdi-face"></i> <span>个人资料</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="user.html">
+        <i class="zmdi zmdi-invert-colors"></i> <span>工号管理</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="forms.html">
+        <i class="zmdi zmdi-format-list-bulleted"></i> <span>角色管理</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="tables.html">
+        <i class="zmdi zmdi-grid"></i> <span>菜单管理</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="calendar.html">
+        <i class="zmdi zmdi-calendar-check"></i> <span>权限管理</span>
+      </a>
+    </li>
+    <li>
+      <a href="login.html">
+        <i class="zmdi zmdi-lock"></i> <span>系统管理</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="register.html">
+        <i class="zmdi zmdi-account-circle"></i> <span>日志管理</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="register.html">
+        <i class="zmdi zmdi-account-circle"></i> <span>应用管理</span>
+      </a>
+    </li>
+  </ul>
+
+</div>
+<!--End sidebar-wrapper-->
+
+<!--Start topbar header-->
+<header class="topbar-nav">
+ <nav class="navbar navbar-expand fixed-top">
+  <ul class="navbar-nav mr-auto align-items-center">
+    <li class="nav-item">
+      <a class="nav-link toggle-menu" href="javascript:void();">
+       <i class="icon-menu menu-icon"></i>
+     </a>
+   </li>
+   <li class="nav-item">
+    <form class="search-bar">
+      <input type="text" class="form-control" placeholder="Enter keywords">
+      <a href="javascript:void();"><i class="icon-magnifier"></i></a>
+    </form>
+  </li>
+</ul>
+
+<ul class="navbar-nav align-items-center right-nav-link">
+  <li class="nav-item dropdown-lg">
+    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+      <i class="fa fa-envelope-open-o"></i></a>
+    </li>
+    <li class="nav-item dropdown-lg">
+      <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
+        <i class="fa fa-bell-o"></i></a>
+      </li>
+      <li class="nav-item language">
+        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();"><i class="fa fa-flag"></i></a>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li class="dropdown-item"> <i class="flag-icon flag-icon-gb mr-2"></i> English</li>
+          <li class="dropdown-item"> <i class="flag-icon flag-icon-fr mr-2"></i> French</li>
+          <li class="dropdown-item"> <i class="flag-icon flag-icon-cn mr-2"></i> Chinese</li>
+          <li class="dropdown-item"> <i class="flag-icon flag-icon-de mr-2"></i> German</li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
+          <span class="user-profile"><img src="https://via.placeholder.com/110x110" class="img-circle" alt="user avatar"></span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+         <li class="dropdown-item user-details">
+          <a href="javaScript:void();">
+           <div class="media">
+             <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
+             <div class="media-body">
+              <h6 class="mt-2 user-title">Zeriter Zhang</h6>
+              <p class="user-subtitle">zhangzeriter@gmail.com</p>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class="dropdown-divider"></li>
+      <li class="dropdown-item"><i class="icon-envelope mr-2"></i> Inbox</li>
+      <li class="dropdown-divider"></li>
+      <li class="dropdown-item"><i class="icon-wallet mr-2"></i> Account</li>
+      <li class="dropdown-divider"></li>
+      <li class="dropdown-item"><i class="icon-settings mr-2"></i> Setting</li>
+      <li class="dropdown-divider"></li>
+      <li class="dropdown-item"><i class="icon-power mr-2"></i> Logout</li>
+    </ul>
+  </li>
+</ul>
+</nav>
+</header>
+<!--End topbar header-->
+<div class="clearfix"></div>
+
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col-lg-12">
+       <div class="card">
+         <div class="card-body">
+          <div class="card-title">新增用户</div>
+          <form>
+          <table class="table align-items-center table-flush table-borderless">
+             <tbody>
+             <tr>
+              <td><font class="float-right" for="input-1">用户姓名：</font></td>
+              <td><input type="text" class="form-control" id="input-1" placeholder="请输入用户姓名"></td>
+              <td><font class="float-right" for="input-2">用户电话：</font></td>
+              <td><input type="tel" class="form-control" id="input-4" placeholder="请输入用户电话"></td>
+              <td><font class="float-right" for="input-5">用户邮箱：</font></td>
+              <td><input type="email" class="form-control" id="input-5" placeholder="请输入用户邮箱"></td>
+              <td><font class="float-right" for="input-3">用户状态：</font></td>
+              <td>
+                <select class="form-control selectpicker" id="sel1" title="请选择用户状态">
+                  <option>有效</option>
+                  <option>无效</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><font class="float-right" for="input-3">用户角色：</font></td>
+              <td>
+                <select class="form-control selectpicker" id="sel1" title="请选择用户角色">
+                  <option>用户角色</option>
+                  <option>系统管理员</option>
+                </select>
+              </td>
+              <td><font class="float-right" for="input-3">授权系统：</font></td>
+              <td>
+                <select class="form-control selectpicker" multiple id="system" title="请选择授权系统" data-max-options="3" data-live-search="true" data-live-search-placeholder="搜索" data-actions-box="true" >
+                  <option>博客系统</option>
+                  <option>博客系统</option>
+                  <option>博客系统</option>
+                  <option>博客系统</option>
+                  <option>博客系统</option>
+                  <option>博客系统</option>
+                </select>
+              </td>
+              <td><font class="float-right" for="input-2">用户密码：</font></td>
+              <td><input type="password" class="form-control" id="input-2" placeholder="请输入用户密码"></td>
+              <td><font class="float-right" for="input-3">确认密码：</font></td>
+              <td><input type="password" class="form-control" id="input-3" placeholder="请输入确认密码"></td>
+            </tr>
+
+          </tbody></table>
+          <hr>
+          <div class="form-group mt-3">
+            <button type="submit" class="btn btn-light px-5 float-left">批量导入</button>
+            <button type="submit" class="btn btn-light px-5 float-left ml-3">下载模板</button>
+          <button type="submit" class="btn btn-light px-5 float-right">添加用户</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<div class="row">
+ <div class="col-12 col-lg-12">
+   <div class="card">
+     <div class="card-header">Recent Order Tables
+      <div class="card-action">
+       <div class="dropdown">
+         <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
+          <i class="icon-options"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="javascript:void();">Action</a>
+          <a class="dropdown-item" href="javascript:void();">Another action</a>
+          <a class="dropdown-item" href="javascript:void();">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="javascript:void();">Separated link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+   <table class="table align-items-center table-flush table-borderless">
+    <thead>
+     <tr>
+       <th>Product</th>
+       <th>Photo</th>
+       <th>Product ID</th>
+       <th>Amount</th>
+       <th>Date</th>
+       <th>Shipping</th>
+     </tr>
+   </thead>
+   <tbody><tr>
+    <td>Iphone 5</td>
+    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
+    <td>#9405822</td>
+    <td>$ 1250.00</td>
+    <td>03 Aug 2017</td>
+    <td><div class="progress shadow" style="height: 3px;">
+      <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+    </div></td>
+  </tr>
+
+  <tr>
+    <td>Earphone GL</td>
+    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
+    <td>#9405820</td>
+    <td>$ 1500.00</td>
+    <td>03 Aug 2017</td>
+    <td><div class="progress shadow" style="height: 3px;">
+      <div class="progress-bar" role="progressbar" style="width: 60%"></div>
+    </div></td>
+  </tr>
+
+  <tr>
+    <td>HD Hand Camera</td>
+    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
+    <td>#9405830</td>
+    <td>$ 1400.00</td>
+    <td>03 Aug 2017</td>
+    <td><div class="progress shadow" style="height: 3px;">
+      <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+    </div></td>
+  </tr>
+
+  <tr>
+    <td>Clasic Shoes</td>
+    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
+    <td>#9405825</td>
+    <td>$ 1200.00</td>
+    <td>03 Aug 2017</td>
+    <td><div class="progress shadow" style="height: 3px;">
+      <div class="progress-bar" role="progressbar" style="width: 100%"></div>
+    </div></td>
+  </tr>
+
+  <tr>
+    <td>Hand Watch</td>
+    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
+    <td>#9405840</td>
+    <td>$ 1800.00</td>
+    <td>03 Aug 2017</td>
+    <td><div class="progress shadow" style="height: 3px;">
+      <div class="progress-bar" role="progressbar" style="width: 40%"></div>
+    </div></td>
+  </tr>
+
+  <tr>
+    <td>Clasic Shoes</td>
+    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
+    <td>#9405825</td>
+    <td>$ 1200.00</td>
+    <td>03 Aug 2017</td>
+    <td><div class="progress shadow" style="height: 3px;">
+      <div class="progress-bar" role="progressbar" style="width: 100%"></div>
+    </div></td>
+  </tr>
+
+</tbody></table>
+</div>
+</div>
+</div>
+<!--End Row-->
+
+<!--start overlay-->
+<div class="overlay toggle-menu"></div>
+<!--end overlay-->
+
+</div>
+<!-- End container-fluid-->
+
+</div><!--End content-wrapper-->
+<!--Start Back To Top Button-->
+<a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+<!--End Back To Top Button-->
+
+<!--Start footer-->
+<footer class="footer">
+  <div class="container">
+    <div class="text-center">
+      Copyright © 2020  <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+    </div>
+  </div>
+</footer>
+<!--End footer-->
+
+<!--start color switcher-->
+<div class="right-sidebar">
+  <div class="switcher-icon">
+    <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
+  </div>
+  <div class="right-sidebar-content">
+
+    <p class="mb-0">Gaussion Texture</p>
+    <hr>
+
+    <ul class="switcher">
+      <li id="theme1"></li>
+      <li id="theme2"></li>
+      <li id="theme3"></li>
+      <li id="theme4"></li>
+      <li id="theme5"></li>
+      <li id="theme6"></li>
+    </ul>
+
+    <p class="mb-0">Gradient Background</p>
+    <hr>
+
+    <ul class="switcher">
+      <li id="theme7"></li>
+      <li id="theme8"></li>
+      <li id="theme9"></li>
+      <li id="theme10"></li>
+      <li id="theme11"></li>
+      <li id="theme12"></li>
+      <li id="theme13"></li>
+      <li id="theme14"></li>
+      <li id="theme15"></li>
+    </ul>
+
+  </div>
+</div>
+<!--end color switcher-->
+
+</div><!--End wrapper-->
+
+
+<!-- Bootstrap core JavaScript-->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- simplebar js -->
+<script src="assets/plugins/simplebar/js/simplebar.js"></script>
+<!-- sidebar-menu js -->
+<script src="assets/js/sidebar-menu.js"></script>
+
+<!-- Custom scripts -->
+<script src="assets/js/app-script.js"></script>
+<script src="assets/dist/js/bootstrap-select.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.9/js/i18n/defaults-zh_CN.min.js"></script>
+<script type="text/javascript">
+  $(".bootstrap-select .dropdown-menu li").hover(
+    function(){
+      $(".bootstrap-select .dropdown-menu li").css("background-color","#778899");
+    }
+    // ,function(){
+    //     $("p").css("background-color","#778899");
+  );
+</script>
+</body>
+</html>
