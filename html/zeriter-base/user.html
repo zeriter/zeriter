@@ -54,6 +54,10 @@
     /*.filter-option-inner-inner font{
       background-color: rgba(255,255,255) !important;
     }*/
+
+/*    .notify{
+      display: none;
+    }*/
   </style>
 </head>
 
@@ -173,7 +177,7 @@
           <span class="user-profile"><img src="https://via.placeholder.com/110x110" class="img-circle" alt="user avatar"></span>
         </a>
         <ul class="dropdown-menu dropdown-menu-right">
-         <li class="dropdown-item user-details">
+         <li class="dropdown-item user-details" style="background-color:  #778899;">
           <a href="javaScript:void();">
            <div class="media">
              <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
@@ -207,57 +211,58 @@
        <div class="card">
          <div class="card-body">
           <div class="card-title">新增用户</div>
-          <form>
-          <table class="table align-items-center table-flush table-borderless">
-             <tbody>
-             <tr>
-              <td><font class="float-right" for="input-1">用户姓名：</font></td>
-              <td><input type="text" class="form-control" id="input-1" placeholder="请输入用户姓名"></td>
-              <td><font class="float-right" for="input-2">用户电话：</font></td>
-              <td><input type="tel" class="form-control" id="input-4" placeholder="请输入用户电话"></td>
-              <td><font class="float-right" for="input-5">用户邮箱：</font></td>
-              <td><input type="email" class="form-control" id="input-5" placeholder="请输入用户邮箱"></td>
-              <td><font class="float-right" for="input-3">用户状态：</font></td>
-              <td>
-                <select class="form-control selectpicker" id="sel1" title="请选择用户状态">
-                  <option>有效</option>
-                  <option>无效</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td><font class="float-right" for="input-3">用户角色：</font></td>
-              <td>
-                <select class="form-control selectpicker" id="sel1" title="请选择用户角色">
-                  <option>用户角色</option>
-                  <option>系统管理员</option>
-                </select>
-              </td>
-              <td><font class="float-right" for="input-3">授权系统：</font></td>
-              <td>
-                <select class="form-control selectpicker" multiple id="system" title="请选择授权系统" data-max-options="3" data-live-search="true" data-live-search-placeholder="搜索" data-actions-box="true" >
-                  <option>博客系统</option>
-                  <option>博客系统</option>
-                  <option>博客系统</option>
-                  <option>博客系统</option>
-                  <option>博客系统</option>
-                  <option>博客系统</option>
-                </select>
-              </td>
-              <td><font class="float-right" for="input-2">用户密码：</font></td>
-              <td><input type="password" class="form-control" id="input-2" placeholder="请输入用户密码"></td>
-              <td><font class="float-right" for="input-3">确认密码：</font></td>
-              <td><input type="password" class="form-control" id="input-3" placeholder="请输入确认密码"></td>
-            </tr>
+            <form>
+              <table class="table align-items-center table-flush table-borderless">
+                 <tbody>
+                 <tr>
+                  <td><font class="float-right" for="input-1">用户姓名：</font></td>
+                  <td><input type="text" class="form-control" id="input-1" placeholder="请输入用户姓名"></td>
+                  <td><font class="float-right" for="input-2">用户电话：</font></td>
+                  <td><input type="tel" class="form-control" id="input-4" placeholder="请输入用户电话"></td>
+                  <td><font class="float-right" for="input-5">用户邮箱：</font></td>
+                  <td><input type="email" class="form-control" id="input-5" placeholder="请输入用户邮箱"></td>
+                  <td><font class="float-right" for="input-3">用户状态：</font></td>
+                  <td>
+                    <select class="form-control selectpicker" id="sel1" title="请选择用户状态">
+                      <option>有效</option>
+                      <option>无效</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><font class="float-right" for="input-3">用户角色：</font></td>
+                  <td>
+                    <select class="form-control selectpicker" id="sel1" title="请选择用户角色">
+                      <option>用户角色</option>
+                      <option>系统管理员</option>
+                    </select>
+                  </td>
+                  <td><font class="float-right" for="input-3">授权系统：</font></td>
+                  <td>
+                    <select class="form-control selectpicker" multiple id="system" title="请选择授权系统" data-max-options="3" data-live-search="true" data-live-search-placeholder="搜索"  ><!--data-actions-box="true"-->
+                      <option>博客系统</option>
+                      <option>博客系统</option>
+                      <option>博客系统</option>
+                      <option>博客系统</option>
+                      <option>博客系统</option>
+                      <option>博客系统</option>
+                    </select>
+                  </td>
+                  <td><font class="float-right" for="input-2">用户密码：</font></td>
+                  <td><input type="password" class="form-control" id="input-2" placeholder="请输入用户密码"></td>
+                  <td><font class="float-right" for="input-3">确认密码：</font></td>
+                  <td><input type="password" class="form-control" id="input-3" placeholder="请输入确认密码"></td>
+                </tr>
 
-          </tbody></table>
-          <hr>
-          <div class="form-group mt-3">
-            <button type="submit" class="btn btn-light px-5 float-left">批量导入</button>
-            <button type="submit" class="btn btn-light px-5 float-left ml-3">下载模板</button>
-          <button type="submit" class="btn btn-light px-5 float-right">添加用户</button>
-          </div>
-      </form>
+                    </tbody>
+                  </table>  
+                <hr/>
+                  <div class="form-group mt-3">
+                    <button type="submit" class="btn btn-light px-5 float-left">批量导入</button>
+                    <button type="submit" class="btn btn-light px-5 float-left ml-3">下载模板</button>
+                    <button type="submit" class="btn btn-light px-5 float-right">添加用户</button>
+                  </div>
+              </form>
     </div>
   </div>
 </div>
@@ -265,18 +270,16 @@
 <div class="row">
  <div class="col-12 col-lg-12">
    <div class="card">
-     <div class="card-header">Recent Order Tables
+     <div class="card-header">用户列表
+      
       <div class="card-action">
        <div class="dropdown">
          <a href="javascript:void();" class="dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown">
           <i class="icon-options"></i>
         </a>
-        <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" href="javascript:void();">Action</a>
-          <a class="dropdown-item" href="javascript:void();">Another action</a>
-          <a class="dropdown-item" href="javascript:void();">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="javascript:void();">Separated link</a>
+        <div class="dropdown-menu dropdown-menu-right text-center">
+          <a class="dropdown-item" href="javascript:void();">导出</a>
+          <a class="dropdown-item" href="javascript:void();">查询</a>
         </div>
       </div>
     </div>
@@ -285,88 +288,157 @@
    <table class="table align-items-center table-flush table-borderless">
     <thead>
      <tr>
-       <th>Product</th>
-       <th>Photo</th>
-       <th>Product ID</th>
-       <th>Amount</th>
-       <th>Date</th>
-       <th>Shipping</th>
+       <th class="text-center">用户code</th>
+       <th class="text-center">用户姓名</th>
+       <th class="text-center">用户电话</th>
+       <th class="text-center">用户邮箱</th>
+       <th class="text-center">用户状态</th>
+       <th class="text-center">默认角色</th>
+       <th class="text-center">操作</th>
      </tr>
    </thead>
-   <tbody><tr>
-    <td>Iphone 5</td>
-    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-    <td>#9405822</td>
-    <td>$ 1250.00</td>
-    <td>03 Aug 2017</td>
-    <td><div class="progress shadow" style="height: 3px;">
-      <div class="progress-bar" role="progressbar" style="width: 90%"></div>
-    </div></td>
-  </tr>
+   <tbody>
+    <tr class="text-center">
+      <td>zeriter</td>
+      <td>Zeriter Zhang</td>
+      <td>18846052924</td>
+      <td>791825185@qq.com</td>
+      <td>激活</td>
+      <td>超级管理员</td>
+      <td> 
+          <a href="#"><i class="zmdi zmdi-account-box-mail"></i></a>
+          <a href="#"><i class="zmdi zmdi-brush"></i></a>
+          <a href="#"><i class="icon-lock"></i></a>
+      </td>
+    </tr>
+    <tr class="text-center">
+      <td>zeriter</td>
+      <td>Zeriter</td>
+      <td>18846052924</td>
+      <td>791825185@qq.com</td>
+      <td>失效</td>
+      <td>人民群众</td>
+      <td> 
+          <a href="#"><i class="zmdi zmdi-account-box-mail"></i></a>
+          <a href="#"><i class="zmdi zmdi-brush"></i></a>
+          <a href="#"><i class="icon-key"></i></a>
+      </td>
+    </tr>
+    <tr class="text-center">
+      <td>zeriter</td>
+      <td>Zeriter Zhang</td>
+      <td>18846052924</td>
+      <td>791825185@qq.com</td>
+      <td>激活</td>
+      <td>超级管理员</td>
+      <td> 
+          <a href="#"><i class="zmdi zmdi-account-box-mail"></i></a>
+          <a href="#"><i class="zmdi zmdi-brush"></i></a>
+          <a href="#"><i class="icon-lock"></i></a>
+      </td>
+    </tr>
+    <tr class="text-center">
+      <td>zeriter</td>
+      <td>Zeriter</td>
+      <td>18846052924</td>
+      <td>791825185@qq.com</td>
+      <td>失效</td>
+      <td>人民群众</td>
+      <td> 
+          <a href="#"><i class="zmdi zmdi-account-box-mail"></i></a>
+          <a href="#"><i class="zmdi zmdi-brush"></i></a>
+          <a href="#"><i class="icon-key"></i></a>
+      </td>
+    </tr>
+    <tr class="text-center">
+      <td>zeriter</td>
+      <td>Zeriter Zhang</td>
+      <td>18846052924</td>
+      <td>791825185@qq.com</td>
+      <td>激活</td>
+      <td>超级管理员</td>
+      <td> 
+          <a href="#"><i class="zmdi zmdi-account-box-mail"></i></a>
+          <a href="#"><i class="zmdi zmdi-brush"></i></a>
+          <a href="#"><i class="icon-lock"></i></a>
+      </td>
+    </tr>
+    <tr class="text-center">
+      <td>zeriter</td>
+      <td>Zeriter</td>
+      <td>18846052924</td>
+      <td>791825185@qq.com</td>
+      <td>失效</td>
+      <td>人民群众</td>
+      <td> 
+          <a href="#"><i class="zmdi zmdi-account-box-mail"></i></a>
+          <a href="#"><i class="zmdi zmdi-brush"></i></a>
+          <a href="#"><i class="icon-key"></i></a>
+      </td>
+    </tr>
+    <tr class="text-center">
+      <td>zeriter</td>
+      <td>Zeriter Zhang</td>
+      <td>18846052924</td>
+      <td>791825185@qq.com</td>
+      <td>激活</td>
+      <td>超级管理员</td>
+      <td> 
+          <a href="#"><i class="zmdi zmdi-account-box-mail"></i></a>
+          <a href="#"><i class="zmdi zmdi-brush"></i></a>
+          <a href="#"><i class="icon-lock"></i></a>
+      </td>
+    </tr>
+    <tr class="text-center">
+      <td>zeriter</td>
+      <td>Zeriter</td>
+      <td>18846052924</td>
+      <td>791825185@qq.com</td>
+      <td>失效</td>
+      <td>人民群众</td>
+      <td> 
+          <a href="#"><i class="zmdi zmdi-account-box-mail"></i></a>
+          <a href="#"><i class="zmdi zmdi-brush"></i></a>
+          <a href="#"><i class="icon-key"></i></a>
+      </td>
+    </tr>
+</tbody>
+</table>
+</div>
+ <div class="card-footer">
+<div class="row ">  
+<div class="col-3 col-lg-3"></div>
+<div class="col-6 col-lg-6">  
+  <ul class="pagination col-md-offset-6">
+    <li class="page-item"><a class="page-link" href="#">首页</a></li>
+    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" href="#">5</a></li>
+    <li class="page-item"><a class="page-link" href="#">6</a></li>
+    <li class="page-item"><a class="page-link" href="#">7</a></li>
+    <li class="page-item"><a class="page-link" href="#">8</a></li>
+    <li class="page-item"><a class="page-link" href="#">9</a></li>
+    <li class="page-item"><a class="page-link" href="#">10</a></li>
+    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+    <li class="page-item"><a class="page-link" href="#">尾页</a></li>
+  </ul>
+  </div>
 
-  <tr>
-    <td>Earphone GL</td>
-    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-    <td>#9405820</td>
-    <td>$ 1500.00</td>
-    <td>03 Aug 2017</td>
-    <td><div class="progress shadow" style="height: 3px;">
-      <div class="progress-bar" role="progressbar" style="width: 60%"></div>
-    </div></td>
-  </tr>
-
-  <tr>
-    <td>HD Hand Camera</td>
-    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-    <td>#9405830</td>
-    <td>$ 1400.00</td>
-    <td>03 Aug 2017</td>
-    <td><div class="progress shadow" style="height: 3px;">
-      <div class="progress-bar" role="progressbar" style="width: 70%"></div>
-    </div></td>
-  </tr>
-
-  <tr>
-    <td>Clasic Shoes</td>
-    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-    <td>#9405825</td>
-    <td>$ 1200.00</td>
-    <td>03 Aug 2017</td>
-    <td><div class="progress shadow" style="height: 3px;">
-      <div class="progress-bar" role="progressbar" style="width: 100%"></div>
-    </div></td>
-  </tr>
-
-  <tr>
-    <td>Hand Watch</td>
-    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-    <td>#9405840</td>
-    <td>$ 1800.00</td>
-    <td>03 Aug 2017</td>
-    <td><div class="progress shadow" style="height: 3px;">
-      <div class="progress-bar" role="progressbar" style="width: 40%"></div>
-    </div></td>
-  </tr>
-
-  <tr>
-    <td>Clasic Shoes</td>
-    <td><img src="https://via.placeholder.com/110x110" class="product-img" alt="product img"></td>
-    <td>#9405825</td>
-    <td>$ 1200.00</td>
-    <td>03 Aug 2017</td>
-    <td><div class="progress shadow" style="height: 3px;">
-      <div class="progress-bar" role="progressbar" style="width: 100%"></div>
-    </div></td>
-  </tr>
-
-</tbody></table>
+<div class="col-3 col-lg-3"></div>
+</div>
+ </div>
 </div>
 </div>
 </div>
 <!--End Row-->
-
 <!--start overlay-->
-<div class="overlay toggle-menu"></div>
+<div class="overlay toggle-menu">
+       
+
+</div>
 <!--end overlay-->
 
 </div>
@@ -378,13 +450,13 @@
 <!--End Back To Top Button-->
 
 <!--Start footer-->
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container">
     <div class="text-center">
       Copyright © 2020  <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
     </div>
   </div>
-</footer>
+</footer> -->
 <!--End footer-->
 
 <!--start color switcher-->
@@ -441,7 +513,7 @@
 <!-- Custom scripts -->
 <script src="assets/js/app-script.js"></script>
 <script src="assets/dist/js/bootstrap-select.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.9/js/i18n/defaults-zh_CN.min.js"></script>
+<script src="assets/js/defaults-zh_CN.min.js"></script>
 <script type="text/javascript">
   $(".bootstrap-select .dropdown-menu li").hover(
     function(){
