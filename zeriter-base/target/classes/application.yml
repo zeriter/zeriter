@@ -1,0 +1,37 @@
+server:
+  port: 8112
+
+spring:
+  application:
+    name: zeriter-base
+  datasource:
+    url: jdbc:mysql://localhost:3306/base?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2b8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081//eureka/
+#      defaultZone: http://39.97.223.51/:8081//eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+logging:
+  config=: logback-spring.xml
+
+#mybatis-plus
+mybatis-plus:
+  mapper-locations: com/zeriter/mapper/xml/*.xml
+  type-aliases-package: com.zeriter.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
