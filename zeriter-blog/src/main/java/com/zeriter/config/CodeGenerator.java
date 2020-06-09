@@ -19,7 +19,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
 /**
- * AJAX请求跨域
+ *
  * @author Zeriter Zhang
  * @time 2020-05-19
  */

@@ -1,7 +1,0 @@
-com\zeriter\config\MybatisPlusConfig.class
-com\zeriter\config\Swagger2Configuration.class
-com\zeriter\config\CodeGenerator.class
-com\zeriter\config\CorsConfig.class
-com\zeriter\util\Sequence.class
-com\zeriter\entity\Result.class
-com\zeriter\App.class
