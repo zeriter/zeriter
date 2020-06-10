@@ -2,6 +2,8 @@ package com.zeriter.service;
 
 import com.zeriter.entity.Blog;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zeriter.reqAndResp.ListBlogs;
+import com.zeriter.reqAndResp.Page;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBlogService extends IService<Blog> {
 
+    ListBlogs getBlogListByPage(Page page);
 }

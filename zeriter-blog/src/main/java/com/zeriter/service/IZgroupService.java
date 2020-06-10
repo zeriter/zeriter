@@ -1,7 +1,8 @@
 package com.zeriter.service;
 
-import com.zeriter.entity.Group;
+import com.zeriter.entity.Zgroup;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zeriter.reqAndResp.ListGroups;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author Zeriter Zhang
  * @since 2020-06-09
  */
-public interface IGroupService extends IService<Group> {
+public interface IZgroupService extends IService<Zgroup> {
 
+    ListGroups getlist();
 }

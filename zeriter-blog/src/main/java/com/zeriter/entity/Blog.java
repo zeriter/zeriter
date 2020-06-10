@@ -1,7 +1,8 @@
 package com.zeriter.entity;
 
-import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -34,10 +35,10 @@ public class Blog implements Serializable {
     private String blogContent;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDateTime createDate;
+    private Date createDate;
 
     @ApiModelProperty(value = "更新时间")
-    private LocalDateTime updateDate;
+    private Date updateDate;
 
     @ApiModelProperty(value = "1隐藏，0显示")
     private String showSts;
@@ -49,7 +50,7 @@ public class Blog implements Serializable {
     private String tagId;
 
     @ApiModelProperty(value = "删除时间")
-    private LocalDateTime deleteDate;
+    private Date deleteDate;
 
     @ApiModelProperty(value = "点击量")
     private Integer click;

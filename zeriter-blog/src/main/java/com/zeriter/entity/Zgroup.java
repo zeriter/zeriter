@@ -1,7 +1,8 @@
 package com.zeriter.entity;
 
-import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -20,18 +21,19 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="Group对象", description="")
-public class Group implements Serializable {
+public class Zgroup implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "标签唯一主键")
-    private String tagId;
+    private String groupId;
 
     @ApiModelProperty(value = "标签名称")
-    private String tagName;
+    private String groupName;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDateTime createDate;
+    private Date createDate;
 
+    private Integer count;
 
 }

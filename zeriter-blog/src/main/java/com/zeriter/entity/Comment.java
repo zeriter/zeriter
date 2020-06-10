@@ -1,8 +1,9 @@
 package com.zeriter.entity;
 
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+import java.util.Date;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -43,10 +44,10 @@ public class Comment implements Serializable {
     private String blogId;
 
     @ApiModelProperty(value = "创建时间")
-    private LocalDateTime createDate;
+    private Date createDate;
 
     @ApiModelProperty(value = "删除时间")
-    private LocalDateTime deleteDate;
+    private Date deleteDate;
 
     @ApiModelProperty(value = "是否删除，0删除，1未删除")
     private String deleteSts;

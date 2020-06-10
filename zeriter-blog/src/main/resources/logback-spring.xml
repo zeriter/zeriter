@@ -45,7 +45,7 @@
           </encoder>
           <!-- 只是DEBUG级别以上的日志才显示 -->
           <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-              <level>DEBUG</level>
+              <level>INFO</level>
           </filter>
      </appender>
 

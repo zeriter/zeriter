@@ -1,8 +1,10 @@
 package com.zeriter.mapper;
 
-import com.zeriter.entity.Group;
+import com.zeriter.entity.Zgroup;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,6 +15,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2020-06-09
  */
 @Mapper
-public interface GroupMapper extends BaseMapper<Group> {
+public interface ZgroupMapper extends BaseMapper<Zgroup> {
 
+    List<Zgroup> getlist();
 }

@@ -1,6 +1,7 @@
 server:
   port: 8111
-
+  servlet:
+    context-path: /zblog
 spring:
   application:
     name: zeriter-blog
@@ -27,4 +28,11 @@ management:
       show-details: ALWAYS
 logging:
   config=: logback-spring.xml
+mybatis-plus:
+  mapper-locations: classpath:xml/*.xml
+  type-aliases-package: com.zeriter.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
 
