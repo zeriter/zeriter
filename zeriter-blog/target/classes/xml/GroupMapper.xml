@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeriter.mapper.ZgroupMapper">
+    <resultMap id="baseResult" type="com.zeriter.entity.Zgroup" >
+        <id column="group_id" property="groupId"  />
+        <result column="group_name" property="groupName" />
+        <result column="create_date" property="createDate"  />
+    </resultMap>
+    <sql id="baseSelect">
+        SELECT
+        group_id AS groupId,
+        group_name AS groupName,
+        create_date AS createDate
+        FROM zgroup
+    </sql>
+    <sql id="baseCondition">
+        <where>
+            <if test="groupId != null ">AND group_id = #{groupId}</if>
+            <if test="groupName != null ">AND group_name like concat('%', #{groupName},'%')</if>
+            <if test="createDate != null ">AND create_date = #{createDate}</if>
+        </where>
+    </sql>
+    <select id="getlist" resultType="com.zeriter.entity.Zgroup">
+        <include refid="baseSelect"/> order by create_date desc
+    </select>
+    <select id="selectByBlogId" parameterType="string" resultType="com.zeriter.entity.Zgroup">
+        <include refid="baseSelect"/>
+        <where>
+            AND group_id = #{groupId}
+        </where>
+    </select>
+</mapper>

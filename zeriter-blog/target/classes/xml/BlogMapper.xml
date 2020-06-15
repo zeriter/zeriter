@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zeriter.mapper.BlogMapper">
+    <resultMap id="baseResult" type="com.zeriter.entity.Blog" >
+        <id column="blog_id" property="blogId"  />
+        <result column="blog_title" property="blogTitle" />
+        <result column="blog_content" property="blogContent"  />
+        <result column="create_date" property="createDate"  />
+        <result column="update_date" property="updateDate"  />
+        <result column="show_sts" property="showSts"  />
+        <result column="delete_sts" property="deleteSts"  />
+        <result column="tag_id" property="tagId"  />
+        <result column="delete_date" property="deleteDate"  />
+        <result column="click" property="click"  />
+        <result column="blog_type" property="blogType"  />
+        <result column="group_id" property="groupId"  />
+    </resultMap>
+    <sql id="baseSelect">
+        SELECT
+        blog_id AS blogId,
+        blog_title AS blogTitle,
+        blog_content AS blogContent,
+        create_date AS createDate,
+        update_date AS updateDate,
+        show_sts AS showSts,
+        delete_sts AS deleteSts,
+        tag_id AS tagId,
+        delete_date AS deleteDate,
+        click AS click,
+        blog_type AS blogType,
+        group_id AS groupId
+        FROM blog
+    </sql>
+    <sql id="baseCondition">
+        <where>
+            <if test="blogId != null ">AND blog_id = #{blogId}</if>
+            <if test="createDate != null ">AND create_date = #{createDate}</if>
+            <if test="updateDate != null ">AND update_date = #{updateDate}</if>
+            <if test="showSts != null ">AND show_sts = #{showSts}</if>
+            <if test="deleteSts != null ">AND delete_sts = #{deleteSts}</if>
+            <if test="deleteDate != null ">AND delete_date = #{deleteDate}</if>
+        </where>
+    </sql>
+    <select id="getBlogListByPage" resultType="com.zeriter.entity.Blog" parameterType="int">
+        <include refid="baseSelect"/>
+        <where>
+            AND show_sts = 0
+            AND delete_sts = 0
+        </where>
+        ORDER BY create_date DESC
+        limit #{pageNum}, #{pageSize}
+    </select>
+    <select id="selectByGroupId" resultType="int" parameterType="string">
+        select count(blog_id) from blog where group_id = #{groupId}
+    </select>
+
+    <select id="getTop4" resultType="com.zeriter.entity.Blog">
+        <include refid="baseSelect"/>
+        <where>
+            AND show_sts = 0
+            AND delete_sts = 0
+        </where>
+        ORDER BY click DESC
+        limit 4
+    </select>
+    <select id="selectByBlogId" parameterType="string" resultType="com.zeriter.entity.Blog">
+        <include refid="baseSelect"/>
+        <where>
+            AND show_sts = 0
+            AND delete_sts = 0
+            AND blog_id = #{blogId}
+        </where>
+    </select>
+
+</mapper>
