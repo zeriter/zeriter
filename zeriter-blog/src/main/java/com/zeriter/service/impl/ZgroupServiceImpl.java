@@ -3,12 +3,14 @@ package com.zeriter.service.impl;
 import com.zeriter.entity.Zgroup;
 import com.zeriter.mapper.BlogMapper;
 import com.zeriter.mapper.ZgroupMapper;
-import com.zeriter.reqAndResp.ListGroups;
+import com.zeriter.reqAndResp.ListGroupsResp;
 import com.zeriter.service.IZgroupService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.zeriter.util.Sequence;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,13 +29,22 @@ public class ZgroupServiceImpl extends ServiceImpl<ZgroupMapper, Zgroup> impleme
     @Resource
     private BlogMapper blogMapper;
     @Override
-    public ListGroups getlist() {
+    public ListGroupsResp getlist() {
         List<Zgroup> groups = zgroupMapper.getlist();
         for (Zgroup group:groups){
             Integer count = blogMapper.selectByGroupId(group.getGroupId());
             group.setCount(count);
         }
-        return new ListGroups(groups);
+        return new ListGroupsResp(groups);
+    }
+
+    @Override
+    public void addGroup(String groupName) {
+        Zgroup group = new Zgroup();
+        group.setGroupId(Sequence.getGroupSeq());
+        group.setCreateDate(new Date());
+        group.setGroupName(groupName);
+        zgroupMapper.insert(group);
     }
 
 }

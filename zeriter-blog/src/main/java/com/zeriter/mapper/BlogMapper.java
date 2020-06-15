@@ -21,4 +21,8 @@ public interface BlogMapper extends BaseMapper<Blog> {
     List<Blog> getBlogListByPage(@Param("pageNum") Integer pageNum,@Param("pageSize") Integer pageSize);
 
     Integer selectByGroupId(@Param("groupId")String groupId);
+
+    List<Blog> getTop4();
+
+    Blog selectByBlogId(@Param("blogId") String blogId);
 }

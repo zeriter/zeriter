@@ -21,6 +21,12 @@
         </where>
     </sql>
     <select id="getlist" resultType="com.zeriter.entity.Zgroup">
+        <include refid="baseSelect"/> order by create_date desc
+    </select>
+    <select id="selectByBlogId" parameterType="string" resultType="com.zeriter.entity.Zgroup">
         <include refid="baseSelect"/>
+        <where>
+            AND group_id = #{groupId}
+        </where>
     </select>
 </mapper>

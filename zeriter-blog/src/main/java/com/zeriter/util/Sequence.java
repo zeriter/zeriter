@@ -6,15 +6,15 @@ import java.util.Date;
 public class Sequence {
     private static Integer num = 0;
     public static  String getBlogSeq(){
-        Date now = new Date();
         return "blog_"+seqSuffix();
     }
+    public static  String getGroupSeq(){
+        return "group_"+seqSuffix();
+    }
     public static  String getTagSeq(){
-        Date now = new Date();
         return "tag_"+seqSuffix();
     }
     public static  String getCommentSeq(){
-        Date now = new Date();
         return "comment_"+seqSuffix();
     }
 

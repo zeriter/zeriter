@@ -53,4 +53,23 @@
     <select id="selectByGroupId" resultType="int" parameterType="string">
         select count(blog_id) from blog where group_id = #{groupId}
     </select>
+
+    <select id="getTop4" resultType="com.zeriter.entity.Blog">
+        <include refid="baseSelect"/>
+        <where>
+            AND show_sts = 0
+            AND delete_sts = 0
+        </where>
+        ORDER BY click DESC
+        limit 4
+    </select>
+    <select id="selectByBlogId" parameterType="string" resultType="com.zeriter.entity.Blog">
+        <include refid="baseSelect"/>
+        <where>
+            AND show_sts = 0
+            AND delete_sts = 0
+            AND blog_id = #{blogId}
+        </where>
+    </select>
+
 </mapper>

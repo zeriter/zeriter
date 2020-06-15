@@ -1,39 +1,8 @@
 $(function(){
     loadPage.getCountAndBlogList(loadPage.pageNum,loadPage.pageSize);
     loadPage.getGroupList();
-    // $.ajax({
-    //     url:'http://localhost:8111/tag/list',
-    //     type: "GET",
-    //     dataType: "json",
-    //     contentType : "application/json;charsetset=UTF-8",//必须
-    //     success: function(data) {
-    //         $('.m-lable').html('');
-    //         var itemHtml="";
-    //         data.data.forEach(element => {
-    //             itemHtml = itemHtml + "<a href=\"#\" target=\"_blank\" class=\"ui teal basic left pointing label m-margin-tiny\">"
-    //                         +element.tagName+
-    //                         "<div class=\"detail\">"+1+"</div></a>"
-    //         });
-    //         $('.m-lable').html(itemHtml);
-    //     }
-    // })
-    // $.ajax({
-    //     url:'http://localhost:8111/tag/list',
-    //     type: "GET",
-    //     dataType: "json",
-    //     contentType : "application/json;charsetset=UTF-8",//必须
-    //     success: function(data) {
-    //         $('.m-group').html('');
-    //         var itemHtml="";
-    //         data.data.forEach(element => {
-    //             itemHtml = itemHtml + "<a class=\"item\" href=\"#\">"+
-    //                        element.tagName+"<div class=\"ui teal basic left pointing label\">"+
-    //                        1+"</div></a>"
-    //         });
-    //         $('.m-group').html(itemHtml);
-    //     }
-    // })
-   
+    loadPage.getTagList();
+    loadPage.getTop4();   
 })
 var loadPage = {
     "pageNum": 1,
@@ -69,7 +38,7 @@ var loadPage = {
                                 "<div class=\"eleven wide column\">"+
                                 "<h3 class=\"ui header\"><a href=\"article.html\">"+ element.blogTitle+
                                 "</a></h3>"+
-                                "<p class=\"m-text\">"+element.blogContent+
+                                "<p class=\"m-text\">"+decodeURIComponent(element.blogContent)+decodeURIComponent(element.blogContent)+
                                 "</p><div class=\"ui grid\">"+
                                 "<div class=\"eleven wide column\"><div class=\"ui horizontal link list\"><div class=\"item\">"+
                                 "<img src=\""+
@@ -99,6 +68,44 @@ var loadPage = {
                             element.count+"</div></a>"
                 });
                 $('.m-group').html(itemHtml);
+            }
+        })
+    },
+    // 获取标签
+    getTagList:function () {
+        $.ajax({
+            url:'/zblog/tag/list',
+            type: "GET",
+            dataType: "json",
+            contentType : "application/json;charsetset=UTF-8",//必须
+            success: function(data) {
+                $('.m-tag').html('');
+                var itemHtml="";
+                data.data.forEach(element => {
+                    itemHtml = itemHtml + "<a class=\"item\" href=\"#\">"
+                            +"<div class=\"ui teal basic left pointing label\">"+
+                            element.tagName+"</div></a>"
+                });
+                $('.m-tag').html(itemHtml);
+            }
+        })
+    },
+    // 获取top4
+    getTop4:function() {
+        $.ajax({
+            url:'/zblog/blog//top4',
+            type: "GET",
+            dataType: "json",
+            contentType : "application/json;charsetset=UTF-8",//必须
+            success: function(data) {
+                $('.top4').html('');
+                var itemHtml="";
+                data.data.blogs.forEach(element => {
+                    itemHtml = itemHtml + "<a class=\"item\" href=\"#\">"+
+                            element.blogTitle+"<div class=\"ui teal basic left pointing label\"><i class=\"heart icon\"></i>"+element.click+"</div>"
+                            +"</a>"
+                });
+                $('.top4').html(itemHtml);
             }
         })
     }
