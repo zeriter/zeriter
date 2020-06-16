@@ -11,7 +11,7 @@
         tag_id AS tagId,
         tag_name AS tagName,
         create_date AS createDate
-        FROM Tag
+        FROM tag
     </sql>
     <sql id="baseCondition">
         <where>

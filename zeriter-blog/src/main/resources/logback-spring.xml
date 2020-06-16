@@ -5,10 +5,10 @@
     <appender name="FILE"
         class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 日志日常打印文件 -->
-        <file>C:/logs/blog.log</file>
+        <file>logs/blog.log</file>
         <!-- 配置日志所生成的目录以及生成文件名的规则  -->        
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>C:/logs/blog-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <fileNamePattern>logs/blog-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
             <!-- 如果按天来回滚，则最大保存时间为365天，365天之前的都将被清理掉 -->
             <maxHistory>30</maxHistory>
             <!-- 日志总保存量为10GB 20GB -->

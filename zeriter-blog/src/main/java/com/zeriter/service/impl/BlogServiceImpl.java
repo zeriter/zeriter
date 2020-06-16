@@ -47,7 +47,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
     @Override
     public ListBlogsResp getBlogListByPage(Page page) {
         Integer count = this.count();
-        List<Blog> blogs = blogMapper.getBlogListByPage(page.getPageNum()-1,page.getPageSize());
+        List<Blog> blogs = blogMapper.getBlogListByPage((page.getPageNum()-1)*(page.getPageSize()),page.getPageSize());
         return new ListBlogsResp(count,blogs);
     }
 

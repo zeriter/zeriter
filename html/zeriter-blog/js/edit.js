@@ -128,66 +128,54 @@ $("#title").blur(function(){
     title = $("#title").val().trim();
     if(title==null||title==""){
         alert("请输入文章标题");
-    }else if(!title.match("^[a-zA-Z0-9_\u4e00-\u9fa5]+$")){
-        alert("请不要输入特殊字符!");
-           $("#title").val("");
-        
-}
-    
+    } 
 });
 // $("input[name='type']:checked").click(function(){
 //     $(this).prop("checked","checked");
 // })
 
 $("#subnow").click(function(){
-    title = $("#title").val().trim();
+    title = encodeURIComponent($("#title").val().trim());
     content = encodeURIComponent($("#content").val());
+    var blogType = $(":radio:checked").val(); 
+    var groupId = $("#group").val();
+    var labels = ""; 
     if(title==null||title==""){
         alert("请输入文章标题");
-    }else if(!title.match("^[a-zA-Z0-9_\u4e00-\u9fa5]+$")){
-            alert("请不要输入特殊字符!");
-               $("input[name='key']").val("");
-            
     }else if(content==null||content==""){
         alert("请输入文章内容");
-    }
-    // type = $("input[name='type':checked]").val();
-    // alert(type);
-    
-    var blogType = $(":radio:checked").val(); 
-    if(blogType ==null||blogType==""|| blogType==undefined){
+    }else if(blogType ==null||blogType==""|| blogType==undefined){
         alert("请选择文章类型");
-    }
-    var groupId = $("#group").val();
-    if(groupId ==null||groupId==""|| groupId==undefined){
+    }else if(groupId ==null||groupId==""|| groupId==undefined){
         alert("请选择文章分组");
-    }
-    var labels = ""; 
-    $.each($('input:checkbox:checked'),function(){
-        labels = labels+ $(this).val()+";";
-    });
-    if(labels ==null||labels==""|| labels==undefined){
-        alert("请选择文章标签");
-    }
-    //增加博客
-    $.ajax({
-        url:'/zblog/blog/blog',
-        type: "PUT",
-        data:"{\"title\":\""+title.trim()+"\","+"\"content\":\""+content+"\","+"\"blogType\":\""+blogType+"\","+"\"groupId\":\""+groupId+"\","+"\"labels\":\""+labels+"\"}",
-        dataType: "json",
-        contentType : "application/json;charsetset=UTF-8",//必须
-        success: function(data) {
-            if(data.code==200){
-                alert("添加成功")
-                $("#addLabel").remove()
-                $('.addLabel').html('');
-                $('.addLabel').html("<a class=\"item\" onclick=\"appendLabel()\"><i class=\"add circle icon\"></i></a>");
-                loadPage.getTagList();
-            }else if(data.code==201){
-                alert("添加失败，失败原因"+data.message);
-            }
-           
+    }else{
+        $.each($('input:checkbox:checked'),function(){
+            labels = labels+ $(this).val()+";";
+        });
+        if(labels ==null||labels==""|| labels==undefined){
+            alert("请选择文章标签");
+        }else{
+            //增加博客
+            $.ajax({
+                url:'/zblog/blog/blog',
+                type: "PUT",
+                data:"{\"title\":\""+title.trim()+"\","+"\"content\":\""+content+"\","+"\"blogType\":\""+blogType+"\","+"\"groupId\":\""+groupId+"\","+"\"labels\":\""+labels+"\"}",
+                dataType: "json",
+                contentType : "application/json;charsetset=UTF-8",//必须
+                success: function(data) {
+                    if(data.code==200){
+                        alert("添加成功")
+                        window.location.href="/zeriter-blog/article.html?key="+data.data;  
+                    }else if(data.code==201){
+                        alert("添加失败，失败原因"+data.message);
+                    }
+                
+                }
+            }) 
         }
-    }) 
+    }
+   
+   
+    
 
 });

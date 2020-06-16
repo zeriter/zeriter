@@ -12,6 +12,7 @@ var loadPage = {
             success: function(data) {
                if(data.code ==200){
                 $("#articleTime").html("<i class=\"calendar icon\"></i>"+formatTime(data.data.blog.createDate));
+                $("#articleTime2").html("发表时间："+formatTime(data.data.blog.createDate));
                 $("#articleEye").html("<i class=\"eye icon\"></i>"+data.data.blog.click);
                 if(data.data.blog.blogType=="1"){
                     $("#articleType").html("原创")
